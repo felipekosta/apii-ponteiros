@@ -1,0 +1,32 @@
+{
+    // Configuração de debug usada SOMENTE no cenário (a): projeto com vários
+    // arquivos .c/.h na mesma pasta.
+    //
+    // Para o cenário (b) - arquivo único com seu próprio main() - não é preciso
+    // nada aqui: use o botão de play (seta ▷) no canto superior direito do
+    // editor e escolha "Debug C/C++ File".
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug: projeto (vários arquivos)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileDirnameBasename}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar (projeto - vários arquivos)",
+            "setupCommands": [
+                {
+                    "description": "Habilitar impressão formatada para o gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
